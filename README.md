@@ -1,16 +1,48 @@
-# GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Flower Garden + Love Story</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+<!-- MUSIC PLAYER -->
+<audio id="bgMusic" src="love-story.mp3" loop></audio>
 
-Hey devildon9278623740-hash!
+<div class="container">
+    <h1>🌸 Welcome to the Flower Garden 🌸</h1>
+    <p>Enjoy the music and the blossoms 🌷</p>
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+    <button onclick="toggleMusic()" class="music-btn">Play / Pause Music</button>
 
-Remember, it's self-paced so feel free to take a break! ☕️
+    <div class="flowers">
+        <img src="images/flower1.png" class="flower" alt="Flower" />
+        <img src="images/flower2.png" class="flower" alt="Flower" />
+        <img src="images/flower3.png" class="flower" alt="Flower" />
+        <img src="images/flower4.png" class="flower" alt="Flower" />
+        <img src="images/flower5.png" class="flower" alt="Flower" />
+    </div>
+</div>
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/devildon9278623740-hash/RAII-SYUMM-SANG-/issues/1)
+<script>
+    const music = document.getElementById("bgMusic");
 
----
+    // Auto-play music (user gesture required on some browsers)
+    window.onload = () => {
+        setTimeout(() => {
+            music.play().catch(err => {
+                console.log("Play was prevented:", err);
+            });
+        }, 500);
+    };
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+    function toggleMusic() {
+        if (music.paused) music.play();
+        else music.pause();
+    }
+</script>
 
+</body>
+</html>
